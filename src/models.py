@@ -11,4 +11,4 @@ class LinkModel(db.Model, UserMixin):
     """Model for the relationship between link and shortlink"""
     id = db.Column(db.Integer, primary_key=True)
     original_url = db.Column(db.String(2048), nullable=False)
-    shortlink = db.Column(db.String(40), nullable=False)
+    shortlink = db.Column(db.String(40), nullable=False, unique=True)

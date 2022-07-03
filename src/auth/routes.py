@@ -17,8 +17,7 @@ def login():
                                                form.password.data):
             login_user(admin, remember=True)
             next_page = request.args.get('next')
-            print(next_page)
-            return redirect(next_page if next_page else '/')
+            return redirect(url_for("main.Admin_route"))
 
     return render_template('login.html', form=form)
 

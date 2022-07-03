@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+    <form action="{{url_for('main.CreateShortlink')}}" method="POST">
+        {{form.label}}
+
+        {{form.url.label}}
+        {{form.url}}
+        
+        {{form.shortlink.label}}
+        {{form.shortlink}}
+
+        {{form.submit}}
+    </form>
+{% endblock %}
