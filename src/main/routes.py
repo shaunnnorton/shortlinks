@@ -7,7 +7,7 @@ from flask_login import login_required
 from src import app , db
 from src.models import LinkModel
 from .forms import GenerateForm
-from src.utils.utils import validate_redirect
+from src.utils.utils import validate_redirect, remove_relation
 
 main = Blueprint("main", __name__)
 
@@ -63,3 +63,11 @@ def CreateShortlink():
         db.session.rollback()
         flash("Error creating shortlink. Try using different text for your shortlink.")
         return redirect(url_for('main.Gen_route'))
+
+@main.route("/Admin/remove", methods=["POST"])
+@login_required
+def remove_route():
+    shortlink = request.form.get("Link")
+    remove_relation(shortlink)
+    flash(f"Deleted {shortlink}")
+    return redirect(url_for("main.Admin_route"))

@@ -1,4 +1,6 @@
 import requests
+from src import db
+from src.models import LinkModel
 
 
 def validate_redirect(url):
@@ -8,3 +10,8 @@ def validate_redirect(url):
         return True, req.status_code
     else:
         return False, req.status_code
+
+
+def remove_relation(shortlink):
+    LinkModel.query.filter_by(shortlink=shortlink).delete()
+    db.session.commit()
