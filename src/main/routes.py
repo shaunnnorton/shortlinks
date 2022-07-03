@@ -16,3 +16,6 @@ def Gen_route():
 def redirect_function(shorthand):
     return f"In Development: {shorthand}"
 
+@main.route("/Admin")
+def Admin_route():
+    return f"In Development"
