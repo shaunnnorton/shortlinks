@@ -14,5 +14,5 @@ def Gen_route():
 
 @main.route("/<shorthand>")
 def redirect_function(shorthand):
-    return "In Development"
+    return f"In Development: {shorthand}"
 
