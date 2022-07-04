@@ -1,15 +1,27 @@
 {% extends 'base.html' %}
 
+{% block styles %}
+  <link rel="stylesheet" href="{{url_for('static',filename='styles/admin.css')}}">
+{% endblock %}
 {% block content %}
-    <ul>
+    <div class="popup" id="delete_confirmation" style="display:none;">
+        <h1 id="Del_alert">ATTENTION</h1>
+        <span>You are about to delete <span id="delete_amount"></span> record(s).</span>
+        <span>Are you sure you want to proceed?</span>
+        <button id="yes_button">YES</button>
+        <button id="no_button">NO</button>
+
+    </div>
+    <form action="{{url_for('main.remove_route')}}" method="post" id="delete_form">
+        <button type="button" id="Delete_Button">Delete</button>
+        <br>
         {% for record in records %}
-        <li>
-        <form action="{{url_for('main.remove_route')}}" method="post">
-            {{record.shortlink}} | {{record.original_url}}
-            <input type="hidden" name="Link" value="{{record.shortlink}}">
-            <button type="submit">Delete</button>
-        </form>
-        </li>
+            <br>
+            <input class="records" type="checkbox" name="{{record.shortlink}}" id="{{record.shortlink}}">{{record.shortlink}} | {{record.original_url}}
         {% endfor %}
-    </ul>
+    </form>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{url_for('static',filename='scripts/admin.js')}}"></script>
 {% endblock %}

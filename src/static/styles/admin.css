@@ -1,0 +1,30 @@
+#delete_confirmation {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background-color:rgba(0, 0, 0, 0.63);
+    margin: auto;
+    flex-direction: column;
+    padding: auto;
+    color: blanchedalmond;
+    top: 0;
+}
+
+#delete_confirmation button {
+    width: 20%;
+}
+
+#Del_alert {
+    color: red;
+}
+
+#delete_amount {
+    color: red;
+}
+
+body {
+    margin: 0;
+}

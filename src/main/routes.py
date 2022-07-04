@@ -67,7 +67,9 @@ def CreateShortlink():
 @main.route("/Admin/remove", methods=["POST"])
 @login_required
 def remove_route():
-    shortlink = request.form.get("Link")
-    remove_relation(shortlink)
-    flash(f"Deleted {shortlink}")
+    print(request.form)
+    keys = request.form.keys()
+    for key in keys:
+        remove_relation(key)    
+    flash(f"Deleted {keys}")
     return redirect(url_for("main.Admin_route"))
