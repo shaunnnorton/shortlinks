@@ -1,0 +1,17 @@
+main {
+    margin: 0;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    background-color: lightgray;
+    text-decoration: underline;
+    font-weight: bold;
+}
+

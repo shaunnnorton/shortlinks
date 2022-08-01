@@ -1,4 +1,9 @@
 {% extends "base.html" %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{{url_for('static',filename='styles/gen.css')}}">
+{% endblock %}
+
 {% block content %}
     <form action="{{url_for('main.CreateShortlink')}}" method="POST">
         {{form.label}}
