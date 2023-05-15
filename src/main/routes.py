@@ -73,3 +73,8 @@ def remove_route():
         remove_relation(key)    
     flash(f"Deleted {keys}")
     return redirect(url_for("main.Admin_route"))
+
+@main.route("/Admin/Modify",methods=['POST'])
+@login_required
+def modify_shortlink():
+    return "Work In Progress"
