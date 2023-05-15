@@ -1,5 +1,6 @@
 .env
 env
+venv
 database.db
 *__pycache__*
 shortlinks*
