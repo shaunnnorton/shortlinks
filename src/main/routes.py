@@ -64,7 +64,7 @@ def CreateShortlink():
         flash("Error creating shortlink. Try using different text for your shortlink.")
         return redirect(url_for('main.Gen_route'))
 
-@main.route("/Admin/remove", methods=["POST"])
+@main.route("/Admin/remove", methods=["POST",'GET'])
 @login_required
 def remove_route():
     print(request.form)
@@ -74,7 +74,13 @@ def remove_route():
     flash(f"Deleted {keys}")
     return redirect(url_for("main.Admin_route"))
 
-@main.route("/Admin/Modify",methods=['POST'])
+@main.route("/Admin/Modify",methods=['POST','GET'])
 @login_required
 def modify_shortlink():
-    return "Work In Progress"
+    return render_template('WIP.html')
+
+
+@main.route("/Admin/Modify/Submit", methods=['POST'])
+@login_required
+def modify_shortlink_submit():
+    return render_template('WIP.html')

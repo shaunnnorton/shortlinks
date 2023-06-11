@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{{url_for('static',filename='styles/WIP.css')}}">
+{% endblock %}
+
+{% block content %}
+  <h1>HELLO! THIS PAGE IS A WORK IN PROGRESS. THANKS FOR CHECKING IT OUT. :)</h1>
+  <img src="{{url_for('static',filename='images/Logo-Shaun-Animated-Shine.gif')}}" alt="">
+{% endblock %}

@@ -20,6 +20,14 @@
             <input class="records" type="checkbox" name="{{record.shortlink}}" id="{{record.shortlink}}">{{record.shortlink}} | {{record.original_url}}
         {% endfor %}
     </form>
+    <form action="{{url_for('main.modify_shortlink')}}" method="post" id="delete_form">
+        <button type="button" id="Delete_Button">Modify</button>
+        <br>
+        {% for record in records %}
+            <br>
+            <input class="records" type="checkbox" name="{{record.shortlink}}" id="{{record.shortlink}}">{{record.shortlink}} | {{record.original_url}}
+        {% endfor %}
+    </form>
 {% endblock %}
 
 {% block scripts %}
